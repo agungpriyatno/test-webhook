@@ -6,7 +6,9 @@ dotenv.config();
 const app: Express = express();
 const port = process.env.PORT;
 
-app.post("/", (req: Request, res: Response) => {
+app.post("/webhook/:slug", (req: Request, res: Response) => {
+  console.log(req.params.slug);
+  
   console.log(req.body);
   
   /* 
